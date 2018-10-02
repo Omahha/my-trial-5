@@ -1,3 +1,5 @@
+</php
+require_once("./vendor/autoload.php");
 $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient('<channel access token>');
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '<channel secret>']);
 
