@@ -37,8 +37,7 @@ foreach ($client->parseEvents() as $event) {
                             )
                         )
                     ));
-                    session_start();
-                    $_SESSION["message"] = $message["text"];
+                    
                     break;
                 default:
                     error_log("Unsupporeted message type: " . $message['type']);

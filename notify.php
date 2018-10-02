@@ -3,7 +3,7 @@ $token = "pLglay37JbcDhaEffod1jaWkR9398k3Xh6HaSTka6DG";
 $str = "猫";
 $curl = curl_init();
 curl_setopt_array($curl, array(
-    CURLOPT_URL => "httpls://notify-api.line.me/api/notify",
+    CURLOPT_URL => "https://notify-api.line.me/api/notify",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
@@ -12,7 +12,7 @@ curl_setopt_array($curl, array(
     CURLOPT_CUSTOMREQUEST => "POST",
     CURLOPT_POSTFIELDS => "message=".$str,
     CURLOPT_HTTPHEADER => array(
-        "Authentication: Bearer ".$token,
+        "Authorization: Bearer ".$token,
         "Cache-control: no-cache",
         "Control-type: application/x-www-form-urlencoded"
     ),
@@ -26,3 +26,5 @@ if($err){
 }else{
     echo $response;
 }
+
+?>
