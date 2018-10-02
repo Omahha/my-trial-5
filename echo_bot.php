@@ -27,6 +27,7 @@ foreach ($client->parseEvents() as $event) {
         case 'message':
             $message = $event['message'];
             $source = $event['source']['groupId'];
+            $entityBody = file_get_contents('php://input');
             switch ($message['type']) {
                 case 'text':
                     $client->replyMessage(array(
@@ -34,7 +35,7 @@ foreach ($client->parseEvents() as $event) {
                         'messages' => array(
                             array(
                                 'type' => 'text',
-                                'text' => "message: ".$message['text']." groupId: ".$source
+                                'text' => "message: ".$message['text']." entity: ".$entityBody
                             )
                         )
                     ));
