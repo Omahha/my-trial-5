@@ -26,7 +26,7 @@ foreach ($client->parseEvents() as $event) {
     switch ($event['type']) {
         case 'message':
             $message = $event['message'];
-            $source = $event['source']['type'];
+            $source = $event['source']['id'];
             $replyToken = $event['replyToken'];
             switch ($message['type']) {
                 case 'text':
